@@ -5,8 +5,8 @@ const config = require('../config')
 const AuthService = {
     getUserWithUserName(db, user_name) {
         return db('thingful_users')
-        .where({ user_name })
-        .first()
+          .where({ user_name })
+          .first()
     },
     comparePasswords(password, hash) {
         return bcrypt.compare(password, hash)
@@ -23,3 +23,5 @@ const AuthService = {
         })
     },
 }
+
+module.exports = AuthService
